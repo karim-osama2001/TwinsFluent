@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Learning Plan – TwinsFluent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body onload="updateNav(); displayPlan();">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo_fb.jpg" alt="English Twinz Logo" class="rounded-circle me-2" style="height:40px; width:40px;">
+        <span>TwinsFluent</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="test.html">Placement Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="subscription.html">Plans</a>
+          </li>
+          <!-- AI tutor navigation link added across pages -->
+          <li class="nav-item">
+            <a class="nav-link" href="tutor.html">AI Tutor</a>
+          </li>
+          <li class="nav-item d-none" id="nav-dashboard">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item" id="nav-login">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item" id="nav-register">
+            <a class="nav-link" href="register.html">Sign up</a>
+          </li>
+          <li class="nav-item d-none" id="nav-logout">
+            <a class="nav-link" href="#" onclick="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="mb-4">Your Personalised Plan</h1>
+    <p class="lead">Based on your placement test score across reading, listening, writing and speaking, your proficiency level is <strong id="level"></strong>.</p>
+    <div class="mb-3" id="level-desc"></div>
+    <h3 class="mt-4">Recommended Study Plan</h3>
+    <div id="plan-details" class="mb-4"></div>
+    <div class="mt-4">
+      <a href="subscription.html" class="btn btn-primary me-2">Subscribe to Unlock Full Access</a>
+      <a href="register.html" class="btn btn-outline-secondary">Create Account</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

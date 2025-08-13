@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Test – TwinsFluent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body onload="updateNav(); startTestTimer(30)">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo_fb.jpg" alt="English Twinz Logo" class="rounded-circle me-2" style="height:40px; width:40px;">
+        <span>TwinsFluent</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="test.html">Placement Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="subscription.html">Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tutor.html">AI Tutor</a>
+          </li>
+          <li class="nav-item d-none" id="nav-dashboard">
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item" id="nav-login">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item" id="nav-register">
+            <a class="nav-link" href="register.html">Sign up</a>
+          </li>
+          <li class="nav-item d-none" id="nav-logout">
+            <a class="nav-link" href="#" onclick="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="mb-3">English Placement Test</h1>
+    <p class="mb-3">This comprehensive 30‑minute test evaluates your reading, listening, writing and speaking skills. Each section is equally weighted. When the timer expires, your answers will be submitted automatically.</p>
+    <div class="alert alert-secondary" role="alert">
+      Time remaining: <span id="test-timer">30:00</span>
+    </div>
+    <form id="full-test-form" onsubmit="evaluateFullTest(event)">
+      <!-- Reading Section -->
+      <h3 class="mt-4">Reading</h3>
+      <p>Read each question and choose the correct answer.</p>
+      <div class="mb-3">
+        <label class="form-label fw-bold">1. Choose the correct word to complete the sentence: "She has been learning English ______ a year."</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r1" id="r1a" value="a" required>
+            <label class="form-check-label" for="r1a">during</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r1" id="r1b" value="b">
+            <label class="form-check-label" for="r1b">for</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r1" id="r1c" value="c">
+            <label class="form-check-label" for="r1c">by</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r1" id="r1d" value="d">
+            <label class="form-check-label" for="r1d">with</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">2. Which sentence is grammatically correct?</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r2" id="r2a" value="a" required>
+            <label class="form-check-label" for="r2a">There are a lot of information.</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r2" id="r2b" value="b">
+            <label class="form-check-label" for="r2b">There is much informations.</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r2" id="r2c" value="c">
+            <label class="form-check-label" for="r2c">There is many information.</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r2" id="r2d" value="d">
+            <label class="form-check-label" for="r2d">There is a lot of information.</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">3. Which word is the odd one out?</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r3" id="r3a" value="a" required>
+            <label class="form-check-label" for="r3a">apple</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r3" id="r3b" value="b">
+            <label class="form-check-label" for="r3b">banana</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r3" id="r3c" value="c">
+            <label class="form-check-label" for="r3c">grape</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="r3" id="r3d" value="d">
+            <label class="form-check-label" for="r3d">carrot</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Listening Section -->
+      <h3 class="mt-4">Listening</h3>
+      <p>Click the play button to hear a question, then select the best answer.</p>
+      <div class="mb-3">
+        <label class="form-label fw-bold">4. Play the sentence and choose the correct answer.</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="playListeningPrompt('Which season comes after spring?')">Play</button>
+        </div>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l1" id="l1a" value="a" required>
+            <label class="form-check-label" for="l1a">Winter</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l1" id="l1b" value="b">
+            <label class="form-check-label" for="l1b">Autumn</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l1" id="l1c" value="c">
+            <label class="form-check-label" for="l1c">Summer</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l1" id="l1d" value="d">
+            <label class="form-check-label" for="l1d">Fall</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">5. Play the sentence and choose the correct answer.</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="playListeningPrompt('What time do most people eat lunch?')">Play</button>
+        </div>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l2" id="l2a" value="a" required>
+            <label class="form-check-label" for="l2a">At nine o\'clock</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l2" id="l2b" value="b">
+            <label class="form-check-label" for="l2b">At midday</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l2" id="l2c" value="c">
+            <label class="form-check-label" for="l2c">At midnight</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l2" id="l2d" value="d">
+            <label class="form-check-label" for="l2d">At six o\'clock</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">6. Play the sentence and choose the correct answer.</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="playListeningPrompt('How many days are there in a week?')">Play</button>
+        </div>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l3" id="l3a" value="a" required>
+            <label class="form-check-label" for="l3a">Five</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l3" id="l3b" value="b">
+            <label class="form-check-label" for="l3b">Seven</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l3" id="l3c" value="c">
+            <label class="form-check-label" for="l3c">Ten</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="l3" id="l3d" value="d">
+            <label class="form-check-label" for="l3d">Twelve</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Writing Section -->
+      <h3 class="mt-4">Writing</h3>
+      <p>Write at least a few sentences in response to each prompt.</p>
+      <div class="mb-3">
+        <label class="form-label fw-bold" for="w1">7. Describe your last holiday.</label>
+        <textarea class="form-control" id="w1" rows="4" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold" for="w2">8. What are your goals for learning English?</label>
+        <textarea class="form-control" id="w2" rows="4" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold" for="w3">9. Write about a book or movie you enjoyed.</label>
+        <textarea class="form-control" id="w3" rows="4" placeholder="Write your answer here..."></textarea>
+      </div>
+
+      <!-- Speaking Section -->
+      <h3 class="mt-4">Speaking</h3>
+      <p>Click "Record" and speak about the topic. Your answer will be transcribed. You can stop talking to end recording.</p>
+      <div class="mb-3">
+        <label class="form-label fw-bold">10. Talk about yourself (your name, where you live, what you do).</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="startRecording('s1')">Record</button>
+        </div>
+        <div class="form-text" id="s1-display"></div>
+        <input type="hidden" id="s1">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">11. Describe your typical day.</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="startRecording('s2')">Record</button>
+        </div>
+        <div class="form-text" id="s2-display"></div>
+        <input type="hidden" id="s2">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold">12. Share your plans for the future.</label>
+        <div class="mb-2">
+          <button type="button" class="btn btn-secondary" onclick="startRecording('s3')">Record</button>
+        </div>
+        <div class="form-text" id="s3-display"></div>
+        <input type="hidden" id="s3">
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Submit Test</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

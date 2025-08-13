@@ -1,0 +1,132 @@
+/* General styles */
+/*
+  Primary colour palette derived from the English.twinz social profiles.  A rich
+  purple serves as the core brand colour while a warm golden orange acts as the
+  accent.  Adjusting these CSS variables allows the entire site to stay on
+  brand without having to modify every rule manually.
+*/
+:root {
+  --primary-color: #4b0082; /* deep indigo/purple reminiscent of the Twinz branding */
+  --accent-color: #f5a623; /* warm golden orange used for highlights and buttons */
+  --light-bg: #f8f9fa;
+  --step-hover: #f0effb;
+}
+body {
+  padding-top: 56px; /* height of navbar */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hero section */
+
+/*
+  Hero section
+  The hero uses a dark overlay on top of the background image to ensure text
+  remains legible.  The underlying image can be swapped with brand imagery
+  without adjusting the overlay.
+*/
+.hero {
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 75vh;
+  position: relative;
+}
+
+/* Dark translucent overlay for the hero background to improve contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Step boxes */
+/* Step boxes used in the "How It Works" section */
+.step-box {
+  background-color: var(--light-bg);
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+/* Elevate steps on hover */
+.step-box:hover {
+  transform: translateY(-5px);
+  background-color: var(--step-hover);
+}
+
+/* Round number badges for each step */
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Pricing cards */
+.pricing-card {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s;
+}
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card ul li {
+  margin: 8px 0;
+}
+
+/* Navigation adjustments */
+.navbar .nav-link {
+  cursor: pointer;
+}
+
+/* Customising the navbar to use the brand primary colour */
+.navbar-dark {
+  background-color: var(--primary-color) !important;
+}
+
+/* Override Bootstrap primary button to use the accent colour */
+.btn-primary {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: #fff;
+}
+}.btn-primary:hover,
+.btn-primary:focus {
+  /* Slightly darken the accent colour on hover */
+  background-color: #e3941f !important;
+  border-color: #e3941f !important;
+  color: #fff;
+}
+
+/* Outline light buttons retain white border but use accent colour for text when hovered */
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  color: var(--accent-color);
+  background-color: #fff;
+  border-color: #fff;
+}
